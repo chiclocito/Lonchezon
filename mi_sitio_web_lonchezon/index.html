@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Lonchezon</title>
+    <style>
+      /* Estilos globales */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #333; /* Texto más oscuro para mejor contraste */
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Encabezado y pie de página */
+      header, footer {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 1em;
+      }
+
+      /* Barra de navegación */
+      nav {
+        background-color: #367c39;
+        padding: 1em;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 0;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      nav ul li a:hover {
+        background-color: #2c6b2e;
+      }
+
+      /* Contenido principal */
+      main {
+        padding: 2em;
+        text-align: center; /* Centra todo el contenido */
+      }
+
+      /* Estilos para el encabezado */
+      h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+      }
+
+      /* Estilo solo para "Lonchezon" */
+      .verde {
+        color: #4CAF50; /* Verde */
+        font-weight: bold;
+      }
+      
+      /* Estilos de imágenes */
+      .header-img {
+        width: 100%;
+        height: auto;
+      }
+
+      .menu-img {
+        width: 80%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
+      }
+
+      /* Efecto de desplazamiento suave */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><img src="C:\Users\gabo2\mi_sitio_web_lonchezon\encabezado Lonchezon.png" alt="Lonchezon" class="header-img"></h1>
+      <nav>
+        <ul>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#ordenar">Ordenar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="menu">
+        <h2>Menú</h2>
+        <p>Bienvenido a Lonchezon,Descubre nuestros deliciosos lonches que te hacen sentir bien, come y disfruta.</p>
+        <img src="C:\Users\gabo2\mi_sitio_web_lonchezon\menu lonchezon.png" alt="Menú Lonchezon" class="menu-img">
+      </section>
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Teléfono: 5213322095500</p>
+      </section>
+
+      <section id="ordenar">
+        <h2>Ordenar</h2>
+        <p>Pide tu lonche ahora mismo.</p>
+        <button onclick="enviarOrden()">Ordenar por WhatsApp</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Lonchezon. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      function enviarOrden() {
+        var mensaje = encodeURIComponent("Hola, quiero hacer un pedido en Lonchezon.");
+        var numeroWhatsApp = "5213322095500";
+        var url = "https://wa.me/" + numeroWhatsApp + "?text=" + mensaje;
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>
