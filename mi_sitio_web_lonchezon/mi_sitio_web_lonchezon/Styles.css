@@ -1,0 +1,113 @@
+/* Estilos globales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d4f1c5; /* Verde más suave */
+    color: #333; /* Mejor contraste */
+    margin: 0;
+    padding: 0;
+    padding-top: 70px; /* Espacio para barra fija */
+}
+
+/* Encabezado y pie de página */
+header, footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+/* Encabezado con imagen de fondo */
+header {
+    background-image: url('imagenes/encabezado-lonchezon.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+}
+
+/* Barra de navegación fija */
+nav {
+    background-color: #4CAF50;
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #367c39;
+}
+
+/* Centrar contenido de "Menú" */
+#menu {
+    text-align: center;
+}
+
+/* Contenido principal */
+main {
+    padding: 2em;
+}
+
+/* Estilos para títulos */
+h1, h2 {
+    color: #4CAF50;
+    margin-bottom: 0.5em;
+}
+
+/* Clase específica para resaltar Lonchezon */
+.verde {
+    color: #4CAF50; 
+    font-weight: bold;
+}
+
+/* Efecto de desplazamiento suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos para imágenes del menú */
+.menu-img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    display: block;
+}
+
+/* Estilos para formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+form input, form textarea, form button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+img {
+    width: 100%; /* La imagen ocupará todo el ancho disponible */
+    height: auto; /* Mantiene la proporción sin distorsionarse */
+    display: block;
+}

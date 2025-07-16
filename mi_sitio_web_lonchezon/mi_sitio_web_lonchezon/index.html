@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Lonchezon</title>
+    <style>
+      /* Estilos globales */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #333; /* Texto más oscuro para mejor contraste */
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Encabezado y pie de página */
+      header, footer {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 1em;
+      }
+
+      /* Barra de navegación */
+      nav {
+        background-color: #367c39;
+        padding: 1em;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 0;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      nav ul li a:hover {
+        background-color: #2c6b2e;
+      }
+
+      /* Contenido principal */
+      main {
+        padding: 2em;
+        text-align: center; /* Centra todo el contenido */
+      }
+
+      /* Estilos para el encabezado */
+      h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+      }
+
+      /* Estilo solo para "Lonchezon" */
+      .verde {
+        color: #4CAF50; /* Verde */
+        font-weight: bold;
+      }
+      
+      /* Estilos de imágenes */
+      .header-img {
+        width: 100%;
+        height: auto;
+      }
+
+      .menu-img {
+        width: 80%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
+      }
+
+      /* Efecto de desplazamiento suave */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><img src="C:\Users\gabo2\mi_sitio_web_lonchezon\encabezado Lonchezon.png" alt="Lonchezon" class="header-img"></h1>
+      <nav>
+        <ul>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#ordenar">Ordenar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="menu">
+        <h2>Menú</h2>
+        <p>Bienvenido a Lonchezon,Descubre nuestros deliciosos lonches que te hacen sentir bien, come y disfruta.</p>
+        <img src="C:\Users\gabo2\mi_sitio_web_lonchezon\menu lonchezon.png" alt="Menú Lonchezon" class="menu-img">
+      </section>
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Teléfono: 5213322095500</p>
+      </section>
+
+      <section id="ordenar">
+        <h2>Ordenar</h2>
+        <p>Pide tu lonche ahora mismo.</p>
+        <button onclick="enviarOrden()">Ordenar por WhatsApp</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Lonchezon. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      function enviarOrden() {
+        var mensaje = encodeURIComponent("Hola, quiero hacer un pedido en Lonchezon.");
+        var numeroWhatsApp = "5213322095500";
+        var url = "https://wa.me/" + numeroWhatsApp + "?text=" + mensaje;
+        window.open(url, "_blank");
+
+      }
+
+      function mostrarMensaje() {
+        alert("¡Gracias por visitar Lonchezon!");
+      }
+
+      // Mostrar mensaje al cargar la página
+      window.onload = mostrarMensaje; 
+      
+</script>
+<script src="facturacion.js"></script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Facturación El Lonchezón</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: white;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .boton-facturar {
+      margin-top: 40px;
+      padding: 16px 32px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton-facturar:hover {
+      background-color: #2ecc71;
+    }
+
+    /* Estilos para el formulario oculto */
+    .formulario-container {
+      display: none;
+      background-color: #2f2f2f;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    #mensaje {
+      margin-top: 15px;
+      color: #00ff00;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bienvenido a El Lonchezón</h1>
+
+  <button class="boton-facturar" id="abrirFormulario">Facturar</button>
+
+  <div class="formulario-container" id="formularioFacturacion">
+    <form id="formFactura">
+      <label for="rfc">RFC:</label>
+      <input type="text" id="rfc" name="rfc" required>
+
+      <label for="nombre">Nombre o Razón Social:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="cfdi">Uso de CFDI:</label>
+      <select id="cfdi" name="cfdi" required>
+        <option value="">Selecciona una opción</option>
+        <option value="G03">G03 - Gastos en general</option>
+        <option value="P01">P01 - Por definir</option>
+      </select>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="monto">Monto de la compra:</label>
+      <input type="number" id="monto" name="monto" required>
+
+      <label for="fecha">Fecha de compra:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <button type="submit" class="boton-facturar">Enviar factura</button>
+
+      <div id="mensaje"></div>
+    </form>
+  </div>
+
+  <script>
+    // Mostrar el formulario al hacer clic en el botón
+    document.getElementById("abrirFormulario").addEventListener("click", function() {
+      document.getElementById("formularioFacturacion").style.display = "block";
+    });
+
+    // Capturar envío del formulario
+    document.getElementById("formFactura").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const datos = {
+        rfc: this.rfc.value,
+        nombre: this.nombre.value,
+        cfdi: this.cfdi.value,
+        email: this.email.value,
+        monto: this.monto.value,
+        fecha: this.fecha.value
+      };
+
+      // Aquí puedes enviar los datos a un servidor o servicio externo
+      console.log("Datos para facturar:", datos);
+
+      document.getElementById("mensaje").textContent = "✅ Solicitud de factura enviada correctamente.";
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Facturación - El Lonchezón</title>
+  <style>
+    body {
+      background-color: #1c1c1c;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #2f2f2f;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      margin-top: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2ecc71;
+    }
+
+    .mensaje {
+      text-align: center;
+      margin-top: 20px;
+      color: #00ff00;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Facturación El Lonchezón</h1>
+
+  <form id="formFactura">
+    <label for="rfc">RFC:</label>
+    <input type="text" id="rfc" name="rfc" required>
+
+    <label for="nombre">Nombre o Razón Social:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="cfdi">Uso de CFDI:</label>
+    <select id="cfdi" name="cfdi" required>
+      <option value="">Selecciona una opción</option>
+      <option value="G03">G03 - Gastos en general</option>
+      <option value="P01">P01 - Por definir</option>
+      <option value="D01">D01 - Honorarios médicos</option>
+    </select>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="monto">Monto de la compra:</label>
+    <input type="number" id="monto" name="monto" required>
+
+    <label for="fecha">Fecha de compra:</label>
+    <input type="date" id="fecha" name="fecha" required>
+
+    <button type="submit">Solicitar factura</button>
+  </form>
+
+  <div class="mensaje" id="mensaje"></div>
+
+  <script>
+    const form = document.getElementById("formFactura");
+    const mensaje = document.getElementById("mensaje");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Evita que se recargue la página
+
+      // Recoger datos del formulario
+      const datos = {
+        rfc: form.rfc.value.trim(),
+        nombre: form.nombre.value.trim(),
+        cfdi: form.cfdi.value,
+        email: form.email.value.trim(),
+        monto: form.monto.value,
+        fecha: form.fecha.value
+      };
+
+      // Aquí podrías enviar estos datos a tu servidor o a un correo
+      console.log("Datos recibidos:", datos);
+
+      // Mostrar mensaje al usuario
+      mensaje.textContent = "¡Tu solicitud de factura ha sido enviada correctamente!";
+      form.reset(); // Limpia el formulario
+    });
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">  
+
